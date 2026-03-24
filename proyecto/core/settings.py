@@ -85,6 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test',
+        #esto no debe hacerse en producción, es solo para fines de desarrollo
         'USER': 'root',#cambiar a su USER
         'PASSWORD': 'Jha25101991#',#cambiar a su PASSWORD
         'HOST': '127.0.0.1',
