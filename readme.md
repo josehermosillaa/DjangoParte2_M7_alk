@@ -32,3 +32,27 @@ ejemplo la shell de Django
 
 * seleccionar todos los datos del modelo
     ``` Producto.objects.all() ```
+
+Django posee tambien comandos para filtrar en el ORM
+* gt : greater than, mayor que ```Producto.objects.filter(precio__gt=100)``` 
+* lt: less than, menor que ```Producto.objects.filter(precio__lt=100)``` 
+* gte : greater than equal, mayor o igual que ```Producto.objects.filter(precio__gte=100)```
+* * lt: less than, meno o igual que ```Producto.objects.filter(precio__lte=100)``` 
+
+### Ordenamiento
+se pueden ordenar por un campo  a partir de 
+* ```Producto.objects.order_by('nombre')``` ascendente
+* ```Producto.objects.order_by('-nombre')``` descendente
+  
+
+### para concatenar consultas
+``` from django.db.models import Q
+productos = Producto.objects.filter(Q(precio__gt=50) & Q(stock__gte=10)) ```
+
+
+## cambiar la shell de python a Ipython
+instalamos ipython con el entorno virtual activado
+
+``` pip install ipython```
+y luego corremos en el proyecto la terminal con 
+``` python manage.py shell -i ipython ```
