@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app',
     'academia',
     'empresa',
+    'clientes',
 ]
 
 MIDDLEWARE = [
