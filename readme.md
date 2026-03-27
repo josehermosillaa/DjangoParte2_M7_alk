@@ -47,7 +47,8 @@ se pueden ordenar por un campo  a partir de
 
 ### para concatenar consultas
 ``` from django.db.models import Q
-productos = Producto.objects.filter(Q(precio__gt=50) & Q(stock__gte=10)) ```
+productos = Producto.objects.filter(Q(precio__gt=50) & Q(stock__gte=10)) 
+```
 
 
 ## cambiar la shell de python a Ipython
