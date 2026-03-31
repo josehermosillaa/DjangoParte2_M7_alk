@@ -5,6 +5,8 @@ class Cliente(models.Model):
     #id numero entero secuencial
     nombre = models.CharField(max_length=100)
     edad = models.IntegerField()
+    visitas = models.IntegerField(default=0)
+    activo = models.BooleanField(default=True)
     email = models.EmailField(unique=True)
     fecha_de_nacimiento = models.DateField(null=True, blank=True)
     def __str__(self):
@@ -36,3 +38,7 @@ class Libro(models.Model):
     autor = models.CharField(max_length=100)
     anio_publicacion = models.IntegerField(default=2000)
    
+
+class Pedido(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    monto = models.DecimalField(max_digits=10, decimal_places=2)
